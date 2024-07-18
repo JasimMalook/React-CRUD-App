@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TextField, Button, Container, Box, Typography } from '@mui/material';
 import axios from 'axios';
-
 
 const Update = () => {
     const navigate = useNavigate();
@@ -14,40 +13,41 @@ const Update = () => {
         setId(localStorage.getItem("id"));
         setName(localStorage.getItem("name"));
         setEmail(localStorage.getItem("email"));
-
     }, []);
+
     const handleUpdate = (e) => {
         e.preventDefault();
-        axios.put(`https://6694bf424bd61d8314c8706a.mockapi.io/Crud-Assignment/${id}`,
-            {
-                name: name,
-                email: email
-            })
+        axios.put(`https://6694bf424bd61d8314c8706a.mockapi.io/Crud-Assignment/${id}`, {
+            name: name,
+            email: email
+        })
             .then(() => {
-                navigate('/read')
+                navigate('/read');
             })
             .catch((err) => {
                 console.error("Failed to update data:", err);
             });
     };
+
     return (
         <div>
-            <Container maxWidth="lg">
+            <Container maxWidth="md" sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Box
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
-                        mt: 5,
-                        p: 3,
+                        p: 4,
                         border: '1px solid #ddd',
                         borderRadius: '8px',
                         boxShadow: '0 3px 5px rgba(0,0,0,0.2)',
-                        backgroundColor: '#f9f9f9'
+                        backgroundColor: '#f9f9f9',
+                        width: '100%',
+                        maxWidth: '600px'
                     }}
                 >
                     <Typography variant="h4" component="h1" gutterBottom>
-                        Update
+                        Update User
                     </Typography>
                     <form onSubmit={handleUpdate} noValidate autoComplete="off" style={{ width: '100%' }}>
                         <TextField
@@ -73,7 +73,7 @@ const Update = () => {
                             variant="contained"
                             color="primary"
                             fullWidth
-                            sx={{ mt: 2 }}
+                            sx={{ mt: 2, backgroundColor: '#6E3CBC', '&:hover': { backgroundColor: '#532a94' } }}
                         >
                             Update
                         </Button>
@@ -81,7 +81,7 @@ const Update = () => {
                 </Box>
             </Container>
         </div>
-    )
+    );
 }
 
-export default Update
+export default Update;

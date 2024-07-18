@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Box, Typography, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/SeeBiz Logo.svg'; // Correct the import path
+import logo from '../assets/SeeBiz Logo.svg';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -14,8 +14,8 @@ const Home = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 minHeight: '100vh',
-                background: '#f9f9f9', // Light background color
-                color: '#333', // Dark text color
+                background: '#f9f9f9',
+                color: '#333',
                 textAlign: 'center',
                 padding: '20px'
             }}

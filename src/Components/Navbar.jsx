@@ -26,8 +26,8 @@ const Navbar = () => {
                     User Management System
                 </Typography>
                 <Button color="inherit" onClick={() => handleNavigation('/')}>Home</Button>
-                <Button color="inherit" onClick={() => handleNavigation('/read')}>Read</Button>
-                <Button color="inherit" onClick={() => handleNavigation('/create')}>Create</Button>
+                <Button color="inherit" onClick={() => handleNavigation('/read')}>User</Button>
+                <Button color="inherit" onClick={() => handleNavigation('/create')}>Register</Button>
             </Toolbar>
         </AppBar>
     );
